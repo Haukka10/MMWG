@@ -2,10 +2,12 @@ using GS.Builds;
 using GS.Trun.Value;
 using System.Collections.Generic;
 using UnityEngine;
+using GS.Resources.Setup;
+
 
 namespace GS.Resources.System
 {
-    public class ResourcesSystem : Resources
+    public class ResourcesSystem : ResourcesSetup
     {
         private Dictionary<string, int> _AllValue = new Dictionary<string, int>();
         public ValuePerTurn valuePerTurn;

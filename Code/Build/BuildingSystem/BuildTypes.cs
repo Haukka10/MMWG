@@ -36,6 +36,6 @@ namespace GS.Builds
             Nuclear_Reactor,
             Oli_Generator
         }
-        private void Awake() => Teams = TeamsController.Teams.AI;
+        private void Awake() => Teams = TeamsController.Teams.None;
     }
 }

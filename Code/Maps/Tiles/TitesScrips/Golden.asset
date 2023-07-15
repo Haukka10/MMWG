@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 804988075999733478442f4f63ae4079, type: 3}
+  m_Name: Golden
+  m_EditorClassIdentifier: 
+  Name: Golden
+  Description: 'To get money to build thins '
+  TypeString: 
+  AmmonSpace: 3
+  IdleSprite: {fileID: 21300000, guid: 146abec302bafbf409b5f388bb92f897, type: 3}
+  HoverSprite: {fileID: 21300000, guid: c2222d86a5bf3f04e882de75db4bb660, type: 3}
+  IsStone: 1
+  Isfull: 0
+  Type: 4

@@ -3,6 +3,7 @@ using UnityEngine;
 using GS.Trun.Value;
 using UnityEngine.UI;
 using GS.Resources.System;
+using AI.System;
 
 namespace GS.Trun
 {
@@ -12,6 +13,7 @@ namespace GS.Trun
         public ResourcesSystem ResourcesS;
         public ValuePerTurn ValuePerTurn;
         public WinController WinController;
+        public AISystem AISystem;
 
         private int CounterTurn = 1;
         public void NextTrun()
@@ -30,6 +32,8 @@ namespace GS.Trun
 
             //add value to add end turn
             AddValueToResources();
+
+            AISystem.BuyTitles();
         }
         /// <summary>
         /// Add value to give to next turn 

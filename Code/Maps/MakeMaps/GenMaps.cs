@@ -1,5 +1,8 @@
 using System.Collections.Generic;
 using UnityEngine;
+using AI.Behaviour;
+using GM.SystemTiles;
+
 
 namespace GS.Maps
 {
@@ -10,9 +13,10 @@ namespace GS.Maps
         private Transform _Camera;
         public float _space;
 
+        public AIBehaviour aIBehaviour;
+
         [SerializeField]
         private List<GameObject> _Titles = new List<GameObject>();
-        [SerializeField]
         private int _TypeTitle;
 
         private Vector3 _Offset;
@@ -34,16 +38,18 @@ namespace GS.Maps
                 for (int j = 0; j < XMaxSzie; j++)
                 {
                     RandTitles();
-                    _Titles[_TypeTitle].name = $"Titles {CountTitle}";
 
                     Instantiate(_Titles[_TypeTitle], _Offset, Quaternion.identity);
                     _Offset.x += _space;
                     CountTitle++;
-
                 }
                 _Offset.x = 0;
                 _Offset.y++;
             }
+
+            TilesSystem[] comp = GameObject.FindObjectsOfType<TilesSystem>();
+            GetAllTitles(comp);
+
             float HaftCountTitle = CountTitle / 2;
             Debug.Log(CountTitle + " CountTitle ");
             Debug.Log(HaftCountTitle + " Haft CountTitle ");
@@ -51,6 +57,21 @@ namespace GS.Maps
             //set camera to see all maps 
             var OffsetCamera = -YMaxSzie / 2;
             _Camera.transform.position = new Vector3(_Camera.transform.localPosition.x, OffsetCamera, -10);
+        }
+        private void GetAllTitles(TilesSystem[] NameTitles)
+        {
+            foreach (var item in NameTitles)
+            {
+                aIBehaviour.SetTypes(item.Tile);
+            }
+
+            aIBehaviour.AllTitles.Add("Golden", aIBehaviour.typesGolden.ToArray());
+            aIBehaviour.AllTitles.Add("Stone", aIBehaviour.typesStone.ToArray());
+            aIBehaviour.AllTitles.Add("Grass", aIBehaviour.typesGrass.ToArray());
+            aIBehaviour.AllTitles.Add("Oli", aIBehaviour.typesOli.ToArray());
+            aIBehaviour.AllTitles.Add("River", aIBehaviour.typesRiver.ToArray());
+
+
         }
     }
 }
