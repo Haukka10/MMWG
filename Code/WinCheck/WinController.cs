@@ -20,7 +20,7 @@ namespace GS.Wining
         public void Checkwin()
         {
             _UISystem = FindObjectOfType<UISystem>();
-            var GameWin = Mathf.Floor(Titles.CountTitle * _TilesToWin);// / 100;
+            var GameWin = Mathf.Floor(Titles.CountTitle * _TilesToWin);// Titles.CountTitle * TilesToWin = ? (for example Titles.CountTitle is 255 and TilesToWin is 0.7 is = 178
 
             if (winHandler.checkTitles() >= GameWin)
             {

@@ -34,6 +34,7 @@ namespace GM.MainScrip
         {
             BuildTypes = null;
             TeamsController = FindObjectOfType<TeamsController>();
+            ResourcesSystem = FindObjectOfType<ResourcesSystem>();
 
             StartMoney = resourcesSetup.Money;
             StartPeople = resourcesSetup.People;

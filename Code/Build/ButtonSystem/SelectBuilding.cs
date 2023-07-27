@@ -6,8 +6,8 @@ using GM.MainScrip;
 public class SelectBuilding : MonoBehaviour
 {
     public GameMainScript GameMain;
-    public BuildEffect BuildEffect;
     public BuildTypes BuildTypes;
 
-    private void GetTypeBuild() => GameMain.SelectBuind(BuildTypes, BuildTypes.ID);
+    private void Start() => GameMain = FindObjectOfType<GameMainScript>();
+    public void GetTypeBuild() => GameMain.SelectBuind(BuildTypes, BuildTypes.ID);
 }
