@@ -13,6 +13,7 @@ public class UISystem : MonoBehaviour
     public TextMeshProUGUI TextPower;
     public TextMeshProUGUI TextMakepowr;
 
+
     public ResourcesSystem resourcesSystem;
     public ValuePerTurn ValuePerTurn;
     // Update is called once per frame
@@ -24,5 +25,14 @@ public class UISystem : MonoBehaviour
         TextPolluted.text = "Polluted: " + resourcesSystem.Polluted.ToString();
         TextMakepowr.text = "Power per Turn: " + ValuePerTurn.MakePowerPerTurn.ToString();
         TextPower.text = "Power: " + resourcesSystem.Power.ToString();
+    }
+
+    public void IsWin()
+    {
+        TextMoney.text = "You Win";
+        TextPeople.text = "You Win";
+        TextPolluted.text = "You Win";
+        TextMakepowr.text = "You Win";
+        TextPower.text = "You Win";
     }
 }
